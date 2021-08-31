@@ -90,24 +90,28 @@ namespace Lab02_01
             this.mnuManProductos.Name = "mnuManProductos";
             this.mnuManProductos.Size = new System.Drawing.Size(180, 22);
             this.mnuManProductos.Text = "Productos";
+            this.mnuManProductos.Click += new System.EventHandler(this.mnuManProductos_Click);
             // 
             // mnuManCategorias
             // 
             this.mnuManCategorias.Name = "mnuManCategorias";
             this.mnuManCategorias.Size = new System.Drawing.Size(180, 22);
             this.mnuManCategorias.Text = "Categorías";
+            this.mnuManCategorias.Click += new System.EventHandler(this.mnuManCategorias_Click);
             // 
             // mnuManProveedores
             // 
             this.mnuManProveedores.Name = "mnuManProveedores";
             this.mnuManProveedores.Size = new System.Drawing.Size(180, 22);
             this.mnuManProveedores.Text = "Proveedores";
+            this.mnuManProveedores.Click += new System.EventHandler(this.mnuManProveedores_Click);
             // 
             // mnuManClientes
             // 
             this.mnuManClientes.Name = "mnuManClientes";
             this.mnuManClientes.Size = new System.Drawing.Size(180, 22);
             this.mnuManClientes.Text = "Clientes";
+            this.mnuManClientes.Click += new System.EventHandler(this.mnuManClientes_Click);
             // 
             // mnuSalir
             // 
@@ -128,14 +132,16 @@ namespace Lab02_01
             // mnuProcRegistrarVenta
             // 
             this.mnuProcRegistrarVenta.Name = "mnuProcRegistrarVenta";
-            this.mnuProcRegistrarVenta.Size = new System.Drawing.Size(166, 22);
+            this.mnuProcRegistrarVenta.Size = new System.Drawing.Size(180, 22);
             this.mnuProcRegistrarVenta.Text = "Registrar Venta";
+            this.mnuProcRegistrarVenta.Click += new System.EventHandler(this.mnuProcRegistrarVenta_Click);
             // 
             // mnuProcRegistrarCompra
             // 
             this.mnuProcRegistrarCompra.Name = "mnuProcRegistrarCompra";
-            this.mnuProcRegistrarCompra.Size = new System.Drawing.Size(166, 22);
+            this.mnuProcRegistrarCompra.Size = new System.Drawing.Size(180, 22);
             this.mnuProcRegistrarCompra.Text = "Registrar Compra";
+            this.mnuProcRegistrarCompra.Click += new System.EventHandler(this.mnuProcRegistrarCompra_Click);
             // 
             // reportesToolStripMenuItem
             // 
@@ -155,36 +161,42 @@ namespace Lab02_01
             this.mnuRepVentas.Name = "mnuRepVentas";
             this.mnuRepVentas.Size = new System.Drawing.Size(200, 22);
             this.mnuRepVentas.Text = "Reporte de ventas";
+            this.mnuRepVentas.Click += new System.EventHandler(this.mnuRepVentas_Click);
             // 
             // mnuRepCompras
             // 
             this.mnuRepCompras.Name = "mnuRepCompras";
             this.mnuRepCompras.Size = new System.Drawing.Size(200, 22);
             this.mnuRepCompras.Text = "Reporte de compras";
+            this.mnuRepCompras.Click += new System.EventHandler(this.mnuRepCompras_Click);
             // 
             // mnuRepInventarioProductos
             // 
             this.mnuRepInventarioProductos.Name = "mnuRepInventarioProductos";
             this.mnuRepInventarioProductos.Size = new System.Drawing.Size(200, 22);
             this.mnuRepInventarioProductos.Text = "Inventario de productos";
+            this.mnuRepInventarioProductos.Click += new System.EventHandler(this.mnuRepInventarioProductos_Click);
             // 
             // mnuRepProveedores
             // 
             this.mnuRepProveedores.Name = "mnuRepProveedores";
             this.mnuRepProveedores.Size = new System.Drawing.Size(200, 22);
             this.mnuRepProveedores.Text = "Reporte de proveedores";
+            this.mnuRepProveedores.Click += new System.EventHandler(this.mnuRepProveedores_Click);
             // 
             // mnuRepUsuarios
             // 
             this.mnuRepUsuarios.Name = "mnuRepUsuarios";
             this.mnuRepUsuarios.Size = new System.Drawing.Size(200, 22);
             this.mnuRepUsuarios.Text = "Reporte de usuarios";
+            this.mnuRepUsuarios.Click += new System.EventHandler(this.mnuRepUsuarios_Click);
             // 
             // mnuRepClientes
             // 
             this.mnuRepClientes.Name = "mnuRepClientes";
             this.mnuRepClientes.Size = new System.Drawing.Size(200, 22);
             this.mnuRepClientes.Text = "Reporte de clientes";
+            this.mnuRepClientes.Click += new System.EventHandler(this.mnuRepClientes_Click);
             // 
             // sistemaToolStripMenuItem
             // 
