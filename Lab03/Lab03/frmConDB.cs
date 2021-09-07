@@ -102,5 +102,11 @@ namespace Lab03
             Persona persona = new Persona(conn);
             persona.Show();
         }
+
+        private void btnLog_Click(object sender, EventArgs e)
+        {
+            Login login = new Login(conn);
+            login.Show();
+        }
     }
 }
