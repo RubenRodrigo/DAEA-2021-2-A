@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace Lab03
 {
-    public partial class Persona : Form
+    public partial class Curso : Form
     {
         SqlConnection conn;
-        public Persona(SqlConnection conn)
+        public Curso(SqlConnection conn)
         {
             this.conn = conn;
             InitializeComponent();
@@ -22,9 +22,9 @@ namespace Lab03
 
         private void btnListar_Click(object sender, EventArgs e)
         {
-            if(conn.State == ConnectionState.Open)
+            if (conn.State == ConnectionState.Open)
             {
-                String sql = "SELECT * FROM Person";
+                String sql = "SELECT * FROM Course";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 SqlDataReader reader = cmd.ExecuteReader();
 
@@ -46,12 +46,12 @@ namespace Lab03
                 String FirstName = txtNombre.Text;
 
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "BuscarPersonaNombre";
+                cmd.CommandText = "BuscarCursoTitulo";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Connection = conn;
 
                 SqlParameter param = new SqlParameter();
-                param.ParameterName = "@FirstName";
+                param.ParameterName = "@Title";
                 param.SqlDbType = SqlDbType.NVarChar;
                 param.Value = FirstName;
 

@@ -37,8 +37,12 @@ namespace Lab03
             {
                 conn = new SqlConnection(str);
                 conn.Open();
-                MessageBox.Show("Conectado satisfactoriamente");
+                MessageBox.Show("Conectado satisfactoriamente");                
+                btnEstado.Enabled = true;
                 btnDesconectar.Enabled = true;
+                btnPersona.Enabled = true;
+                btnCurso.Enabled = true;
+                btnLog.Enabled = true;
             }
             catch(Exception ex)
             {
@@ -72,6 +76,11 @@ namespace Lab03
                 {
                     conn.Close();
                     MessageBox.Show("Conexion cerrada satisfactoriamente");
+                    btnEstado.Enabled = false;
+                    btnDesconectar.Enabled = false;
+                    btnPersona.Enabled = false;
+                    btnCurso.Enabled = false;
+                    btnLog.Enabled = false;
                 }
                 else
                     MessageBox.Show("La conexión ya esta cerrada");
@@ -107,6 +116,21 @@ namespace Lab03
         {
             Login login = new Login(conn);
             login.Show();
+        }
+
+        private void btnCurso_Click(object sender, EventArgs e)
+        {
+            Curso curso = new Curso(conn);
+            curso.Show();
+        }
+
+        private void frmConDB_Load(object sender, EventArgs e)
+        {
+            btnEstado.Enabled = false;
+            btnDesconectar.Enabled = false;
+            btnPersona.Enabled = false;
+            btnCurso.Enabled = false;
+            btnLog.Enabled = false;
         }
     }
 }

@@ -43,6 +43,7 @@ namespace Lab03
             this.btnDesconectar = new System.Windows.Forms.Button();
             this.btnPersona = new System.Windows.Forms.Button();
             this.btnLog = new System.Windows.Forms.Button();
+            this.btnCurso = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -60,6 +61,7 @@ namespace Lab03
             this.txtServidor.Name = "txtServidor";
             this.txtServidor.Size = new System.Drawing.Size(160, 20);
             this.txtServidor.TabIndex = 1;
+            this.txtServidor.Text = "DESKTOP-48DOANE\\SQLEXPRESS2017";
             // 
             // txtBaseDatos
             // 
@@ -67,6 +69,7 @@ namespace Lab03
             this.txtBaseDatos.Name = "txtBaseDatos";
             this.txtBaseDatos.Size = new System.Drawing.Size(160, 20);
             this.txtBaseDatos.TabIndex = 3;
+            this.txtBaseDatos.Text = "School";
             // 
             // label2
             // 
@@ -124,7 +127,7 @@ namespace Lab03
             // 
             // btnConectar
             // 
-            this.btnConectar.Location = new System.Drawing.Point(88, 209);
+            this.btnConectar.Location = new System.Drawing.Point(96, 209);
             this.btnConectar.Name = "btnConectar";
             this.btnConectar.Size = new System.Drawing.Size(92, 23);
             this.btnConectar.TabIndex = 9;
@@ -134,7 +137,7 @@ namespace Lab03
             // 
             // btnEstado
             // 
-            this.btnEstado.Location = new System.Drawing.Point(188, 209);
+            this.btnEstado.Location = new System.Drawing.Point(196, 209);
             this.btnEstado.Name = "btnEstado";
             this.btnEstado.Size = new System.Drawing.Size(92, 23);
             this.btnEstado.TabIndex = 10;
@@ -145,7 +148,7 @@ namespace Lab03
             // btnDesconectar
             // 
             this.btnDesconectar.Enabled = false;
-            this.btnDesconectar.Location = new System.Drawing.Point(288, 209);
+            this.btnDesconectar.Location = new System.Drawing.Point(296, 209);
             this.btnDesconectar.Name = "btnDesconectar";
             this.btnDesconectar.Size = new System.Drawing.Size(92, 23);
             this.btnDesconectar.TabIndex = 11;
@@ -155,7 +158,7 @@ namespace Lab03
             // 
             // btnPersona
             // 
-            this.btnPersona.Location = new System.Drawing.Point(88, 244);
+            this.btnPersona.Location = new System.Drawing.Point(96, 244);
             this.btnPersona.Name = "btnPersona";
             this.btnPersona.Size = new System.Drawing.Size(92, 23);
             this.btnPersona.TabIndex = 12;
@@ -165,7 +168,7 @@ namespace Lab03
             // 
             // btnLog
             // 
-            this.btnLog.Location = new System.Drawing.Point(288, 244);
+            this.btnLog.Location = new System.Drawing.Point(296, 244);
             this.btnLog.Name = "btnLog";
             this.btnLog.Size = new System.Drawing.Size(92, 23);
             this.btnLog.TabIndex = 13;
@@ -173,11 +176,22 @@ namespace Lab03
             this.btnLog.UseVisualStyleBackColor = true;
             this.btnLog.Click += new System.EventHandler(this.btnLog_Click);
             // 
+            // btnCurso
+            // 
+            this.btnCurso.Location = new System.Drawing.Point(196, 244);
+            this.btnCurso.Name = "btnCurso";
+            this.btnCurso.Size = new System.Drawing.Size(92, 23);
+            this.btnCurso.TabIndex = 14;
+            this.btnCurso.Text = "Cursos";
+            this.btnCurso.UseVisualStyleBackColor = true;
+            this.btnCurso.Click += new System.EventHandler(this.btnCurso_Click);
+            // 
             // frmConDB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 279);
+            this.Controls.Add(this.btnCurso);
             this.Controls.Add(this.btnLog);
             this.Controls.Add(this.btnPersona);
             this.Controls.Add(this.btnDesconectar);
@@ -194,6 +208,7 @@ namespace Lab03
             this.Controls.Add(this.label1);
             this.Name = "frmConDB";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.frmConDB_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,6 +230,7 @@ namespace Lab03
         private System.Windows.Forms.Button btnDesconectar;
         private System.Windows.Forms.Button btnPersona;
         private System.Windows.Forms.Button btnLog;
+        private System.Windows.Forms.Button btnCurso;
     }
 }
 
