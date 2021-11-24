@@ -157,5 +157,122 @@ namespace Lab14.Controllers
                 return View();
             }
         }
+
+        // ********* PRODUCTS *********
+        // GET: /Categories/CreateProduct
+        //mostrar formulario
+        public ActionResult CreateProduct()
+        {
+            return View();
+        }
+
+        // POST:/Categories/CreateProduct
+        // registrar nueva categoria en la BD
+        [HttpPost]
+        public ActionResult CreateProduct(Products nuevoProducto)
+        {
+            try
+            {
+                // validamos los datos ingresados
+                if (ModelState.IsValid)
+                {
+                    //registramos el nuevo producto
+                    Contexto.Products.Add(nuevoProducto);
+                    Contexto.SaveChanges();
+                    //llamamos al metodo index
+                    return RedirectToAction("Details/"+nuevoProducto.CategoryID);
+                }
+                //muestra la vista "create" con datos ingresados
+                return View(nuevoProducto);
+            }
+            catch
+            {
+                //muestra la vista "create" vacia
+                return View();
+            }
+        }
+
+        // GET: /Categories/EditProduct/5
+        //muestra formulario para edicion
+        public ActionResult EditProduct(int? id)
+        {
+            // si el ID es nulo
+            if (id == null) // muestra un mensaje de error
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
+            //buscar el producto a editar
+            Products ProductEditar = Contexto.Products.Find(id);
+
+            // si entidad es NULO (producto no existe)
+            if (ProductEditar == null)
+                return HttpNotFound();
+
+            // envia el producto a editar a la vista
+            return View(ProductEditar);
+        }
+
+        // POST: /Categories/Edit/5
+        //registrar cambios del producto en la BD
+        [HttpPost]
+        public ActionResult EditProduct(Products ProductEditar)
+        {
+            try
+            {//validamos los datos ingresados
+                if (ModelState.IsValid)
+                {// graba los cambios del producto
+                    Contexto.Entry(ProductEditar).State = System.Data.Entity.EntityState.Modified;
+                    Contexto.SaveChanges();
+
+                    // llama al metodo index
+                    return RedirectToAction("Details/" + ProductEditar.CategoryID);
+                }
+                //muestra la vista Edit con los datos ingresados
+                return View(ProductEditar);
+            }
+            catch
+            {// muestra la vista Edit vacia
+                return View();
+            }
+        }
+
+        // GET: /categories/Delete/5
+        public ActionResult DeleteProduct(int? id)
+        {
+            // si el ID es nulo
+            if (id == null) // muestra un mensaje de error
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            Products ProductoEliminar = Contexto.Products.Find(id);
+            
+            if (ProductoEliminar == null)
+                return HttpNotFound();
+
+            return View(ProductoEliminar);
+        }
+
+        // POST: /Categories/Delete/5        
+        [HttpPost]
+        public ActionResult DeleteProduct(int? id, Products Producto1)
+        {
+            try
+            {
+                Products ProductoEliminar = new Products();
+                if (ModelState.IsValid)
+                {
+                    if (id == null)
+                        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                    ProductoEliminar = Contexto.Products.Find(id);
+                    if (ProductoEliminar == null)
+                        return HttpNotFound();
+                    Contexto.Products.Remove(ProductoEliminar);
+                    Contexto.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                return View(ProductoEliminar);
+            }
+            catch
+            {
+                return View();
+            }
+        }
     }
 }
